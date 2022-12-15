@@ -1,5 +1,7 @@
 import requests
 import streamlit as st
+from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie_spinner
 import time
 import pandas as pd
 import glob, os, json
@@ -181,6 +183,10 @@ page = st.sidebar.radio('', ('Introduction',
 #Page 1 - Introduction
 if page == "Introduction":
     st.header("Student Life Dashboard")
+
+    lottie_url = "https://assets4.lottiefiles.com/packages/lf20_jmuq5aha.json"
+    lottie_animation = load_lottieurl(lottie_url)
+    st_lottie(lottie_animation, key="animation", height=500)
 
     st.markdown("The following dashboard contains data surrounding students’ lifestyle patterns and mental health. The data is derived from the StudentLife Dataset by Darthmouth University. StudentLife is the first study that uses passive and automatic sensing data from the phones of a class of 48 Dartmouth students over a 10 week term to assess their mental health (e.g., depression, loneliness, stress), academic performance (grades across all their classes, term GPA and cumulative GPA) and behavioral trends (e.g., how stress, sleep, visits to the gym, etc. change in response to college workload -- i.e., assignments, midterms, finals -- as the term progresses). For confidentiality purposes, details of the students’ profile are purposefully hidden. This dashboard also does not include mobile phone activity data and course data. It is hoped that the data in this dashboard can give an overview of insight to students’ mindset within a given time frame. Doing so will hopefully help us to make connections about students’ life patterns and it might also same surveys and approaches could be replicated in further studies. ")
     st.info('Use the navigation sidebar to browse the dashboard', icon="ℹ️")
