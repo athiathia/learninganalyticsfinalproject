@@ -41,3 +41,4 @@ requests~=2.28.1
 pyrsistent~=0.19.2
 decorator~=5.1.1
 zipp~=3.11.0
+lottie~=0.7.0
